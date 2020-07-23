@@ -1,0 +1,8 @@
+12:38:21,519  INFO devpionyLogger:23 - loading properties......
+12:38:21,522  INFO devpionyLogger:28 - loaded sucessfully
+12:38:21,523  INFO devpionyLogger:30 - Initializing the chrome driver.......
+12:38:25,980  INFO devpionyLogger:33 - driver Initilization completed
+12:38:25,980  INFO devpionyLogger:43 - opening home page completed
+12:38:32,086  INFO devpionyLogger:14 - page loaded
+12:38:32,210  INFO devpionyLogger:17 - clicking the link
+12:38:36,511  INFO devpionyLogger:52 - closing the browser
