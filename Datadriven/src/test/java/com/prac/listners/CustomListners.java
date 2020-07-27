@@ -9,11 +9,14 @@ import org.testng.Reporter;
 
 import com.prac.testBase.TestBase;
 import com.prac.utilities.TestUtils;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class CustomListners extends TestBase implements ITestListener{
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		test=rep.startTest(result.getName().toUpperCase());
+		
 		
 	}
 
@@ -28,6 +31,9 @@ public class CustomListners extends TestBase implements ITestListener{
 			log.error("not able to take screen shot");
 		}
 		Reporter.log("<a target= \"_blank\" href="+TestUtils.Name+" >screenshot</a>");
+		test.log(LogStatus.PASS,test.addScreenCapture(TestUtils.Name));
+		rep.endTest(test);
+		rep.flush();
 		
 	}
 

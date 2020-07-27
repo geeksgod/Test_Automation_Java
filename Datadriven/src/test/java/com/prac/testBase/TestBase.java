@@ -11,12 +11,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import com.prac.utilities.ExtendManger;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class TestBase {
 	public static WebDriver driver;
 	public static FileInputStream fis;
 	public static Properties config = new Properties();
 	public static Properties or = new Properties();
 	public static Logger log = Logger.getLogger("devpionyLogger");
+	public static ExtentReports rep= ExtendManger.getInstance();
+	public static ExtentTest test;
 	@BeforeSuite
 	public void setUp() throws IOException, InterruptedException{
 		if (driver==null) {
