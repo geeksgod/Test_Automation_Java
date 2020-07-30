@@ -9,6 +9,7 @@
   <test name="Test">  
     <classes>
       <class name="com.prac.testCases.ClickLinkTest"/>
+      <class name="com.prac.testCases.GoogleTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

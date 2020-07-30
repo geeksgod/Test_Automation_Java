@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import com.prac.utilities.ExcelReader;
 import com.prac.utilities.ExtendManger;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -23,6 +25,7 @@ public class TestBase {
 	public static Logger log = Logger.getLogger("devpionyLogger");
 	public static ExtentReports rep= ExtendManger.getInstance();
 	public static ExtentTest test;
+	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir")+"\\src\\test\\resources\\excel\\testdata.xlsx");
 	@BeforeSuite
 	public void setUp() throws IOException, InterruptedException{
 		if (driver==null) {
@@ -49,6 +52,13 @@ public class TestBase {
 		log.info("opening home page completed");
 		driver.get(config.getProperty("homepage"));
 		Thread.sleep(200);
+	}
+	public void type(String locator,String value) {
+		driver.findElement(By.cssSelector(or.getProperty(locator))).sendKeys(value);
+	}
+	
+	public void click(String locator) {
+		driver.findElement(By.cssSelector(or.getProperty(locator))).click();
 	}
 	@AfterSuite
 	public void teardown() {
